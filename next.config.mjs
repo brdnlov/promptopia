@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
+module.exports = {
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
+  },
+};
+
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -11,10 +17,10 @@ const nextConfig = {
     ],
   },
   webpack(config) {
-  config.experiments = {
-  ...config.experiments,
-  topLevelAwait: true,
-  };
+    config.experiments = {
+      ...config.experiments,
+        topLevelAwait: true,
+    };
   return config;
   },
   };
